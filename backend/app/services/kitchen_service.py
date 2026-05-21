@@ -34,19 +34,19 @@ def create_kitchen(title: str, desc: str, bg_url: str):
         raise ValueError("A kitchen with this title already exists")
 
 
-def delete_kitchen(id: int):
-    """Удалить экземпляр кухни"""
-    kitchen = Kitchen.query.get(id)
+# def delete_kitchen(id: int):
+#     """Удалить экземпляр кухни"""
+#     kitchen = Kitchen.query.get(id)
 
-    if not kitchen:
-        raise ValueError("Kitchen not found")
-    if kitchen.recipes:
-        raise ValueError("Kitchen has got attached recipes")
+#     if not kitchen:
+#         raise ValueError("Kitchen not found")
+#     if kitchen.recipes:
+#         raise ValueError("Kitchen has got attached recipes")
 
-    if kitchen.background_url:
-        delete_image(kitchen.background_url)
+#     if kitchen.background_url:
+#         delete_image(kitchen.background_url)
 
-    db.session.delete(kitchen)
-    db.session.commit()
+#     db.session.delete(kitchen)
+#     db.session.commit()
 
-    return True
+#     return True
